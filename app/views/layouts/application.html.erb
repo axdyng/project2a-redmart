@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project2aRedmart</title>
+    <title>RedMart App</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <header>
+      <h1><%= heading_title(yield(:title)) %></h1>
+    </header>
     <%= yield %>
   </body>
 </html>
