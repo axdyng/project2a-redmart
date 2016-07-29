@@ -1,0 +1,20 @@
+/* universal */
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #ECF0F1;
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  background-color: white;
+  text-align: center;
+}

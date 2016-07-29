@@ -9,9 +9,40 @@
   </head>
 
   <body>
-    <header>
-      <h1><%= heading_title(yield(:title)) %></h1>
+    <!-- <h1><%= heading_title(yield(:title)) %></h1> -->
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <!-- Logo Nav -->
+      <nav class="navbar-brand">
+        <%= link_to image_tag("redmart-logo.png", size: "150x45", alt: "RedMart logo", id: "logo"), '#' %>
+      </nav>
+      <!-- Search Bar -->
+      <div class="col-md-8">
+        <div class="input-group search-bar">
+          <input type="text" class="form-control" placeholder="Search for a product...">
+
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+          </span>
+        </div>
+      </div>
+      <!-- Buttons Nav -->
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Help", '#' %></li>
+          <li><%= link_to "Cart", '#' %></li>
+          <li><%= link_to "Sign up", '#' %></li>
+          <li><%= link_to "Log in", '#' %></li>
+        </ul>
+      </nav>
     </header>
-    <%= yield %>
-  </body>
+
+    <div class="container">
+      <div class="center jumbotron">
+        <%= yield %>
+      </div>
+    </div>
+
+    </body>
 </html>
