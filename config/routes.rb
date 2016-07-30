@@ -6,10 +6,16 @@ Rails.application.routes.draw do
   get '/about',   to: 'static_pages#about'
   get '/support', to: 'static_pages#support'
 
-  # Dynamic routes
+  # Dynamic routes (users)
   get '/signup',  to: 'users#new'
-  post '/signup',  to: 'users#create'
+  get '/account', to: 'users#edit'
+  #post '/signup',  to: 'users#create'
+
+  # Login routes (session)
+  get     '/login',   to: 'sessions#new'
+  post    '/login',   to: 'sessions#create'
+  delete  '/logout',  to: 'sessions#destroy'
 
   # RESTful routes (CRUD)
-  resources :users
+  resources :users,   except:[ :new, :edit ]
 end

@@ -16,3 +16,10 @@
     border-color: $navbar-inverse-hover-color;
   }
 }
+
+.linkto-text {
+  color: #888;
+  &:hover {
+    color: #999;
+  }
+}
