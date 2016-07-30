@@ -1,0 +1,18 @@
+/* main content */
+
+.header-bg {
+  background-color: $navbar-inverse-color;
+  margin-bottom: 15px;
+  h1 {
+    color: white;
+  }
+}
+
+.btn-primary {
+  background-color: $navbar-inverse-color;
+  border-color: $navbar-inverse-color;
+  &:hover {
+    background-color: $navbar-inverse-hover-color;
+    border-color: $navbar-inverse-hover-color;
+  }
+}

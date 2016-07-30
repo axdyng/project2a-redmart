@@ -21,11 +21,12 @@
  @import "bootstrap/variables";
 
  // Partials
- //@import "partials/mixin";
+ @import "partials/mixin";
  @import "partials/reset";
  @import "partials/typography";
- //@import "partials/form";
+ @import "partials/form";
  @import "partials/header";
+ @import "partials/main";
  //@import "partials/sidebar";
  @import "partials/footer";
 
