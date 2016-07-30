@@ -1,6 +1,7 @@
 /* header */
 .navbar-inverse {
-  background-color: #EE4054;
+  background-color: $navbar-inverse-color;
+  border-color: $navbar-inverse-color;
 }
 
 #logo {
@@ -37,7 +38,7 @@
         opacity: 0.4;
         &:hover {
           opacity: 0.8;
-          color: #EE4054;
+          color: $navbar-inverse-color;
         }
       }
     }
@@ -47,11 +48,11 @@
 .navbar-inverse .navbar-nav {
   margin-right: 15px;
   li {
-    border-left: 1px solid #EC243B;
+    border-left: 1px solid $navbar-inverse-hover-color;
     a {
       color: white;
       &:hover {
-        background-color: #EC243B;
+        background-color: $navbar-inverse-hover-color;
       }
     }
   }

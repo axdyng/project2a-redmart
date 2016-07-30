@@ -13,7 +13,7 @@
  */
 
  // Overwriting Bootstrap
- //@import "partials/variables";
+ @import "partials/variables";
 
  // Bootstrap defaults
  @import "bootstrap-sprockets";
@@ -27,6 +27,6 @@
  //@import "partials/form";
  @import "partials/header";
  //@import "partials/sidebar";
- //@import "partials/footer";
+ @import "partials/footer";
 
  @import "*";

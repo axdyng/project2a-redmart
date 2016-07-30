@@ -18,3 +18,10 @@ textarea {
   background-color: white;
   text-align: center;
 }
+
+a {
+  color: $navbar-inverse-color;
+  &:hover {
+    color: $navbar-inverse-color;
+  }
+}
