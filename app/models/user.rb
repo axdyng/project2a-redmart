@@ -18,9 +18,15 @@ class User < ApplicationRecord
 
   validates :first_name,
             length:       { minimum: 2, message: 'too short lah'},
-            format:       { with: /\A([a-zA-Z]+\s?)*\z/}
+            format:       { with: /\A([a-zA-Z]+\s?)*\z/},
+            allow_nil: true
+
+  validates :last_name,
+            format:       { with: /\A([a-zA-Z]+\s?)\z/},
+            allow_nil: true
 
   validates :contact_number,
-            format: { with: /\A\d{8}\z/ } #8 digit numbers (SG)
+            format: { with: /\A\d{8}\z/ },  # 8-digit numbers (SG)
+            allow_nil: true
 
 end

@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-
   end
 
   def edit
@@ -23,9 +22,24 @@ class SessionsController < ApplicationController
     end
   end
 
+  def update
+    if current_user.update_attributes(permitted_user_params)
+      flash[:success] = "Account information updated."
+      redirect_to current_user
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     log_out
     redirect_to root_url
+  end
+
+  private
+
+  def permitted_user_params
+    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :contact_number)
   end
 
 end

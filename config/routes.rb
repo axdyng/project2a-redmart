@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   #post '/signup',  to: 'users#create'
 
   # Login routes (session)
-  get     '/login',   to: 'sessions#new'
-  get     '/account',  to: 'sessions#edit'
-  post    '/login',   to: 'sessions#create'
-  delete  '/logout',  to: 'sessions#destroy'
+  get     '/login',     to: 'sessions#new'
+  get     '/account',   to: 'sessions#edit'
+  post    '/login',     to: 'sessions#create'
+  patch   '/account',   to: 'sessions#update'
+  delete  '/logout',    to: 'sessions#destroy'
 
   # RESTful routes (CRUD)
   resources :users,   except:[ :new ]
