@@ -27,7 +27,7 @@
 
       <% if logged_in? %>
         <li>
-          <%= link_to users_path, class: 'navbar-links' do %>
+          <%= link_to '#', class: 'navbar-links' do %>
             <span class="glyphicon glyphicon-list-alt navbar-icons" aria-hidden="true"></span> My List
           <% end %>
         </li>
@@ -39,6 +39,10 @@
 
           <ul class="dropdown-menu">
             <li><%= link_to "My Account", account_path, class: 'navbar-drop' %></li>
+
+            <% if is_admin? %>
+              <li><%= link_to "View All Accounts", users_path, class: 'navbar-drop' %></li>
+            <% end %>
 
             <li class="divider"></li>
             <li><%= link_to "Log out", logout_path, class: 'navbar-drop', method: 'delete' %></li>
