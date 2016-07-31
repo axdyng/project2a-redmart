@@ -6,7 +6,7 @@
   <!-- Search Bar -->
   <div class="col-md-6">
     <div class="input-group search-bar">
-      <input type="text" class="form-control" placeholder="Search for a product...">
+      <input type="search" class="form-control" placeholder="Search for a product...">
 
       <span class="input-group-btn">
         <button class="btn btn-default" type="button">
@@ -38,7 +38,7 @@
           </a>
 
           <ul class="dropdown-menu">
-            <li><%= link_to "My Account", account_path(current_user), class: 'navbar-drop' %></li>
+            <li><%= link_to "My Account", account_path, class: 'navbar-drop' %></li>
 
             <li class="divider"></li>
             <li><%= link_to "Log out", logout_path, class: 'navbar-drop', method: 'delete' %></li>

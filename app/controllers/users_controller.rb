@@ -44,10 +44,11 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(permitted_user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        flash[:success] = 'Account information updated.'
+        format.html { redirect_to @user }
         format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :edit }
+        format.html { render '/sessions/edit' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -72,6 +73,6 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     # Never trust parameters from the scary internet, only allow the white list through.
     def permitted_user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :contact_number)
     end
 end
