@@ -1,8 +1,15 @@
 <% @name = review.user.email.split('@') %>
 <li id="review-<%= review.id %>">
-  <span class="user"><%= @name[0].capitalize %> commented on <i><%= review.product.name %></i>:</span>
+  <span class="user">
+    <%= @name[0].capitalize %> commented on:
+    <i><%= link_to review.product.name, review.product %></i>
+  </span>
   <span class="content"><%= review.content.capitalize %></span>
   <span class="timestamp">
   <%= time_ago_in_words(review.created_at) %> ago.
+  <% if current_user?(review.user) %>
+    <%= link_to "delete", review, method: :delete,
+                                     data: { confirm: "Delete review?" } %>
+  <% end %>
   </span>
 </li>

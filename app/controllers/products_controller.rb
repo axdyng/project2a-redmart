@@ -3,8 +3,6 @@ class ProductsController < ApplicationController
 
   def show
     @review = current_user.reviews.build if logged_in?
-    # @product_review = Review.where("product_id = ?", params[:id])
-
   end
 
   private

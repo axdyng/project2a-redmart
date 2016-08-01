@@ -1,18 +1,16 @@
 <%= provide(:heading, @product.name) %>
 
 <div class="row">
-  <!-- <div class="product-showimage" style="background-image: url(<%#= @product[:imgurl] %>)"></div> -->
-
+  <!-- image -->
   <div class="col-sm-6 col-md-4 col-lg-3 col-md-offset-1">
     <div class="product-image" style="background-image: url(<%= @product[:imgurl] %>)"></div>
   </div>
-
+  <!-- description and price -->
   <div class="col-sm-6 col-md-4 col-lg-3">
     <p><%= @product.description %></p>
     <h4>$<%= '%.2f'% @product.price %></h4>
-    <%#= link_to 'Add review', '#', class: "btn btn-primary" %>
   </div>
-
+  <!-- review form -->
   <div class="col-sm-6 col-md-4 col-lg-3 review-textarea">
     <section>
       <% if logged_in? %>
@@ -23,8 +21,9 @@
 
 </div>
 
-<div class="row productreview-row">
-  <div class="col-md-8 product-reviews">
+<!-- reviews of the product -->
+<div class="row review-row">
+  <div class="col-md-8 review-col">
     <% if @product.reviews.any? %>
       <h4>Product reviews: <%= @product.reviews.count %></h4>
       <ol class="reviews">
@@ -33,14 +32,3 @@
     <% end %>
   </div>
 </div>
-
-<!-- <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <%#= render 'partials/user_info' %>
-    </section>
-    <section class="micropost_form">
-      <%#= render 'partials/review_form' %>
-    </section>
-  </aside>
-</div> -->

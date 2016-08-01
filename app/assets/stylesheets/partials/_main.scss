@@ -24,6 +24,7 @@
   }
 }
 
+/* static pages */
 .about-text {
   text-align: left;
   font-size: 1.2em !important;
@@ -33,6 +34,19 @@
   text-align: left;
 }
 
+.profile-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  margin-top: 10px;
+
+  li {
+    list-style: none;
+  }
+}
+
+/* product pages */
 .product-links {
   color: black;
   .show-products {
@@ -68,13 +82,13 @@
   }
 }
 
-.productreview-row {
+.review-row {
   margin-top: 30px;
   border-top: 1px solid #B7B8B3;
   border-bottom: 1px solid #B7B8B3;
   padding: 0;
 
-  .product-reviews {
+  .review-col {
     text-align: left;
     padding: 0;
     h4 {
