@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @reviews = @user.reviews.paginate(page: params[:page])
   end
 
   # GET /users/new
@@ -82,27 +83,12 @@ class UsersController < ApplicationController
     end
 
     #--- Authorisations ---#
-    def require_login
-      #check if the user is logged in or not
-      unless logged_in?
-        flash[:danger] = "WHAT CHU DOING? Please log in."
-        redirect_to root_url # halts request cycle
-      end
-    end
-
     def correct_user
       @user = User.find(params[:id])
 
       unless current_user?(@user)
         flash[:warning] = "YOU ARE NOT JOSE"
         redirect_to root_url
-      end
-    end
-
-    def require_logout
-      if logged_in?
-        flash[:warning] = "Log out first before creating a new account."
-        redirect_to(root_url)
       end
     end
 

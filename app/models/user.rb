@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Relationship
+  has_many :reviews,  dependent: :destroy
+  # has_many :products, through:   :reviews
+
   before_save {self.email.downcase!}
 
   # VALIDATION

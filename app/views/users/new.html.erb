@@ -5,7 +5,7 @@
 
     <%= form_for(@user) do |f| %>
       <!-- For showing errors -->
-      <%= render 'partials/error_messages' %>
+      <%= render 'partials/error_messages', object: f.object %>
       <!-- Form fields -->
       <div class="field">
         <%= f.label :email %>

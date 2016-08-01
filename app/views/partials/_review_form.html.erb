@@ -1,0 +1,7 @@
+<%= form_for(@review, url: root_path) do |f| %>
+  <%= render 'partials/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Review this product..." %>
+  </div>
+  <%= f.submit "Review product", class: "btn btn-primary" %>
+<% end %>

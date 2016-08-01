@@ -4,7 +4,7 @@
 
     <%= form_for(current_user, url: account_path ) do |f| %>
       <!-- For showing errors -->
-      <%= render 'partials/error_messages' %>
+      <%= render 'partials/error_messages', object: f.object %>
       <!-- Form fields -->
       <div class="col-md-3 col-md-offset-3">
         <div class="field">

@@ -27,7 +27,7 @@
 
       <% if logged_in? %>
         <li>
-          <%= link_to '#', class: 'navbar-links' do %>
+          <%= link_to current_user, class: 'navbar-links' do %>
             <span class="glyphicon glyphicon-list-alt navbar-icons" aria-hidden="true"></span> My List
           <% end %>
         </li>
