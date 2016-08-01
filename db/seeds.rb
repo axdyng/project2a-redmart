@@ -10,6 +10,7 @@ sampleImages = [
   'http://i.imgur.com/kxZsek7.jpg',
   'http://a3145z1.americdn.com/wp-content/uploads/2013/04/banana-amazing-fruit-and-cure.jpg'
 ]
+
 35.times do
   Product.create!(
     imgurl: sampleImages.sample,
@@ -18,12 +19,15 @@ sampleImages = [
     description: Faker::Hipster.sentence
   )
 end
+
 # users
-User.create!(
+admin = User.create!(
   email:                 'dylan@gmail.com',
   password:              'test',
   password_confirmation: 'test'
 )
+admin.toggle!(:admin)
+
 # reviews
 8.times do
   content = Faker::Hipster.sentence
