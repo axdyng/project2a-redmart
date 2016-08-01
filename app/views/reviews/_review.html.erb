@@ -1,7 +1,8 @@
+<% @name = review.user.email.split('@') %>
 <li id="review-<%= review.id %>">
-  <span class="user"><%= link_to review.user.email, review.user %></span>
-  <span class="content"><%= review.content %></span>
+  <span class="user"><%= @name[0].capitalize %> commented on <i><%= review.product.name %></i>:</span>
+  <span class="content"><%= review.content.capitalize %></span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(review.created_at) %> ago.
+  <%= time_ago_in_words(review.created_at) %> ago.
   </span>
 </li>

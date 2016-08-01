@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'products/show'
-
   root 'static_pages#home'
-  post '/',       to: 'reviews#create'
   # Static pages routes, not connected to models
   get '/help',    to: 'static_pages#help'
   get '/about',   to: 'static_pages#about'
@@ -20,7 +17,11 @@ Rails.application.routes.draw do
   patch   '/account',   to: 'sessions#update'
   delete  '/logout',    to: 'sessions#destroy'
 
+  # Reviews
+  post '/products/:id', to: 'reviews#create'
+  
   # RESTful routes (CRUD)
   resources :users,   except: [ :new ]
-  resources :reviews, only:   [:create, :destroy]
+  resources :reviews, only:   [ :create, :destroy ]
+  resources :products
 end

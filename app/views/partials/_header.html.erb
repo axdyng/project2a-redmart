@@ -4,7 +4,7 @@
     <%= link_to image_tag("redmart-logo.png", size: "150x45", alt: "RedMart logo", id: "logo"), root_path %>
   </nav>
   <!-- Search Bar -->
-  <div class="col-md-6">
+  <div class="search-bar">
     <div class="input-group search-bar">
       <input type="search" class="form-control" placeholder="Search for a product...">
 
@@ -38,7 +38,11 @@
           </a>
 
           <ul class="dropdown-menu">
-            <li><%= link_to "My Account", account_path, class: 'navbar-drop' %></li>
+            <% if !is_admin? %>
+              <li><%= link_to "My Account", account_path, class: 'navbar-drop' %></li>
+            <% else %>
+              <li><%= link_to "Admin", account_path, class: 'navbar-drop' %></li>
+            <% end %>
 
             <% if is_admin? %>
               <li><%= link_to "View All Accounts", users_path, class: 'navbar-drop' %></li>

@@ -1,31 +1,14 @@
 <%= provide(:heading, "Our Products") %>
 
-<% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'partials/user_info' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'partials/review_form' %>
-      </section>
-    </aside>
-  </div>
-<% else %>
-  <!-- Display products -->
-  <div class="row">
-    <div class="col-sm-2 col-md-3 col-lg-4">
-      <ul>
-        <li>
-          <img src="http://placehold.it/150x150">
-          <h4>Milk</h4>
-          <p>$2.90</p>
-        </li>
-        <li><img src="http://placehold.it/150x150"></li>
-        <li><img src="http://placehold.it/150x150"></li>
-        <li><img src="http://placehold.it/150x150"></li>
-      </ul>
+<!-- Display products -->
+<div class="row">
+  <% @products.each do |product| %>
+  <%= link_to product_path(product.id), class: 'product-links' do %>
+    <div class="col-sm-6 col-md-4 col-lg-3 show-products">
+      <div class="product-image" style="background-image: url(<%= product[:imgurl] %>)"></div>
+      <h4><%= product[:name] %></h4>
+      <p>$<%= '%.2f'% product[:price] %></p>
     </div>
-
-  </div>
-<% end %>
+  <% end %>
+  <% end %>
+</div>

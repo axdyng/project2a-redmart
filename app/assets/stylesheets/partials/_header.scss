@@ -12,9 +12,14 @@
   }
 }
 // Search bar
-.col-md-6 {
-  margin-top: 10px;
+.search-bar {
+  width: 40%;
+  float: left;
+  position: relative;
+  margin-top: 5px;
+
   .input-group {
+    width: 100%;
 
     .form-control {
       //border: 1px solid #EE4054;
@@ -57,7 +62,7 @@
       background-color: $navbar-inverse-hover-color;
     }
   }
-  
+
   .no-cart {
     &:hover {
       text-decoration: line-through;
