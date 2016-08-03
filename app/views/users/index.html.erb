@@ -6,6 +6,7 @@
       <th>Email</th>
       <th>Created on</th>
       <th>Actions</th>
+      <th>Is Admin?</th>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +25,7 @@
           <%= link_to "Remove", user, class: "btn btn-primary", method: :delete, data: { confirm: "Delete account?" } %>
         <% end %>
       </td>
+      <td><%= user[:admin] %></td>
     </tr>
     <% end %>
   </tbody>
