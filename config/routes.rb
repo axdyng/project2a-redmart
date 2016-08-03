@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get '/support', to: 'static_pages#support'
 
   # Dynamic routes (users)
-  get '/signup',  to: 'users#new'
+  get  '/signup',  to: 'users#new'
+  post '/signup',  to: 'users#create'
   #get '/account/:id/edit', to: 'users#edit', as: :account
   #post '/signup',  to: 'users#create'
 
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
 
   # Reviews
   post '/products/:id', to: 'reviews#create'
-  
+
   # RESTful routes (CRUD)
   resources :users,   except: [ :new ]
   resources :reviews, only:   [ :create, :destroy ]
