@@ -1,0 +1,15 @@
+<%= provide(:heading, 'Search results') %>
+
+
+<!-- Display products -->
+<div class="row">
+  <% @products.each do |product| %>
+  <%= link_to product_path(product.id), class: 'product-links' do %>
+    <div class="col-sm-6 col-md-4 col-lg-3 show-products">
+      <div class="product-image" style="background-image: url(<%= product[:imgurl] %>)"></div>
+      <h4><%= product[:name] %></h4>
+      <p>$<%= '%.2f'% product[:price] %></p>
+    </div>
+  <% end %>
+  <% end %>
+</div>

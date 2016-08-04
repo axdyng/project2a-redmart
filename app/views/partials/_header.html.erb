@@ -6,13 +6,18 @@
   <!-- Search Bar -->
   <div class="search-bar">
     <div class="input-group search-bar">
-      <input type="search" class="form-control" placeholder="Search for a product...">
-
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">
-          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </button>
-      </span>
+      <%= form_tag products_path, method: 'get' do %>
+        <!-- Form fields -->
+        <div class="field">
+          <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search for product...' %>
+        </div>
+        <!-- Button icon -->
+        <span class="input-group-btn">
+          <%= button_tag(type: 'submit', class: 'btn btn-default') do  %>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          <% end %>
+        </span>
+      <% end %>
     </div>
   </div>
   <!-- Buttons Nav -->
